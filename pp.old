@@ -1,0 +1,232 @@
+!define(qlref)(
+Al-!1, Q!2:!3
+)
+
+!define(qref)(
+!1, Q!2:!3
+)
+
+!def(quran)(
+!pdf(
+```{=latex}
+\begin{aquote}{!4}
+\begin{center}
+\includegraphics{!1}
+\end{center}
+!cmd
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+echo !3 | pandoc -t latex
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+\end{aquote}
+```
+)
+!html(
+!ifdef{2}{
+::: {custom-style="quran AR"}
+:::{dir=rtl}
+!2
+:::
+:::
+}{**INSERT ARABIC AYAH**}
+
+::: {custom-style="quran trans EN"}
+«!3»
+:::
+
+::: {custom-style="quran reference EN"}
+(!4)
+:::
+)
+)
+
+!def(quranList)(
+!html(
+!ifdef{2}{
+::: {custom-style="quran in-list AR"}
+:::{dir=rtl}
+!2
+:::
+:::
+}{**INSERT ARABIC AYAH**}
+
+::: {custom-style="quran in-list trans EN"}
+«!3»
+:::
+
+::: {custom-style="quran in-list reference EN"}
+(!4)
+:::
+)
+)
+
+!def(theDate)(
+  !cmd
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  @echo off
+  echo %date% (%time%)
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+)
+
+!def(theDatePython)(
+!python
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+from datetime import datetime
+
+# datetime object containing current date and time
+now = datetime.now()
+
+# dd/mm/YY H:M:S
+dt_string = now.strftime("%A, %d %B %Y (%I:%M:%S %p)")
+print(dt_string)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+)
+
+!define(frac)(
+  !1/!2
+)
+
+!define(tfrac)(
+  $\frac{!1}{!2}$
+)
+
+!define(ref)(
+  !html([(REFERENCE)]{custom-style="MISSING REFERENCE"})
+)
+
+!define(trans)(
+  !html([(TRANSLATION INCOMPLETE)]{custom-style="MISSING TRANSLATION"})
+)
+
+!define(swt)(
+  !pdf(\swt)
+  !html((Exalted be He))
+)
+
+!define(pbuh)(
+  !pdf(\pbuh)
+  !html((Peace and Blessings of Allāh be upon him))
+)
+
+!define(pbuhb)(
+  !pdf(\pbuh)
+  !html([Peace and Blessings of Allāh be upon him])
+)
+
+!define(p)(
+  !ifeq(!1)(him)(
+    !pdf(\mabpwhim)
+    !html((May Allāh be pleased with him))
+  )
+
+  !ifeq(!1)(her)(
+    !pdf(\mabpwher)
+    !html((May Allāh be pleased with her))
+  )
+
+  !ifeq(!1)(themtwo)(
+    !pdf(\mabpwthemtwo)
+    !html((May Allāh be pleased with them both))
+  )
+
+  !ifeq(!1)(them)(
+    !pdf(\mabpwthem)
+    !html((May Allāh be pleased with them))
+  )
+
+  !ifeq(!1)(themf)(
+    !pdf(\mabpwthemf)
+    !html((May Allāh be pleased with them))
+  )
+)
+
+!define(s)(
+  !ifeq(!1)(him)(
+    !pdf(\ohsalam)
+    !html((Peace be upon him))
+  )
+  !ifeq(!1)(them)(
+    !pdf(\salamthem)
+    !html((Peace be upon them))
+  )
+)
+
+!define(m)(
+  !ifeq(!1)(him)(
+    !pdf(\mercyhim)
+    !html((May Allāh have mercy on him))
+  )
+  !ifeq(!1)(them)(
+    !pdf(\mercythem)
+    !html((May Allāh have mercy on them))
+  )
+)
+
+!def(note)(
+::: {custom-style="ADMO Note Block"}
+[NOTE]{custom-style="ADMO Note Text"}
+
+!1
+:::
+)
+
+
+!def(miniTOC)(
+!ifdef{2}{
+```{=openxml}
+<w:bookmarkStart w:id="!1" w:name="!2"/>
+<w:sdt>
+      <w:sdtPr>
+        <w:docPartObj>
+          <w:docPartGallery w:val="Table of Contents"/>
+          <w:docPartUnique/>
+        </w:docPartObj>
+      </w:sdtPr>
+      <w:sdtContent>
+        <w:p>
+          <w:r>
+            <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+            <w:instrText xml:space="preserve">TOC \b !2 \o "1-3" \h \z \u</w:instrText>
+            <w:fldChar w:fldCharType="separate"/>
+            <w:fldChar w:fldCharType="end"/>
+          </w:r>
+        </w:p>
+      </w:sdtContent>
+    </w:sdt>
+```
+}{
+```{=openxml}
+<w:bookmarkEnd w:id="!1"/>
+```
+}
+)
+
+
+!def(miniTOC_H4)(
+!ifdef{2}{
+```{=openxml}
+<w:bookmarkStart w:id="!1" w:name="!2"/>
+<w:sdt>
+      <w:sdtPr>
+        <w:docPartObj>
+          <w:docPartGallery w:val="Table of Contents"/>
+          <w:docPartUnique/>
+        </w:docPartObj>
+      </w:sdtPr>
+      <w:sdtContent>
+        <w:p>
+          <w:r>
+            <w:fldChar w:fldCharType="begin" w:dirty="true"/>
+            <w:instrText xml:space="preserve">TOC \b !2 \o "1-4" \h \z \u</w:instrText>
+            <w:fldChar w:fldCharType="separate"/>
+            <w:fldChar w:fldCharType="end"/>
+          </w:r>
+        </w:p>
+      </w:sdtContent>
+    </w:sdt>
+```
+}{
+```{=openxml}
+<w:bookmarkEnd w:id="!1"/>
+```
+}
+)
