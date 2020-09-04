@@ -1,9 +1,9 @@
-<p align="center" style="font-weight: bold;">
+<p align="center" style="font-weight: bold !important;">
     <span>بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
 </p>
 
 All praise belongs to Allāh, Lord of all the worlds. May peace and blessings be
-upon our Prophet Muḥammad, upon is family, his companions and all those who
+upon our Prophet Muḥammad, upon his family, his companions and all those who
 follow his guidance until the Day of Judgment.
 
 # Introduction
