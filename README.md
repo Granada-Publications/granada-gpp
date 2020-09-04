@@ -14,6 +14,11 @@ TODO
 
 To convert current macros in `pp.old` to GPP format.
 
+# Dependencies
+
+1. [GPP](https://github.com/logological/gpp)
+2. Python 3.x (Not necessary if not expecting to use #exec)
+
 # Honorifics
 
 Honorific macros (should) include the following:
