@@ -1,2 +1,6 @@
+./output/
+/output/
 output.md
+output.html
 *.exe
+*.docx
