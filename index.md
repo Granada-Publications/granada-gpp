@@ -19,7 +19,6 @@
 #mode standard default
 
 #define PBUH ([صلى الله عليه وسلم]{lang=ar})
-#define p(x) (May Allāh be pleased with x)
 #define pyTime #exec python python/_pyTime.py
 
 

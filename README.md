@@ -45,6 +45,12 @@ TODO
 
 TODO
 
+# Notes
+
+- `#define p(x) (May Allāh be pleased with x)`
+
+    This doesn't work as it also affects page markers (e.g. p. 45).
+
 # License
 
 The GPP manual in the `reference` folder is from the GPP project.
