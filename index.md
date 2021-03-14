@@ -3,14 +3,15 @@
 /* ======================
         Quran Related
    ======================*/
+#mode standard default
 
-#mode standard tex
-\define{\qref{surahName}{surahNumber}{ayahNumber}}{\surahName, Q\surahNumber:\ayahNumber}
+#define QREF #1, Q#2:#3
 
-\mode{standard}{cpp}
+#mode standard cpp
 /* ======================
         Ḥadīth Related
    ======================*/
+#mode standard default
 
 #mode standard cpp
 /* ======================
@@ -62,7 +63,7 @@ Expected: Abū Bakr (May Allāh be pleased with him)
 Output:   Khadījah p(her)  
 Expected: Khadījah (May Allāh be pleased with her)
 
-Output:   qref(al-Nisāʾ,4,111)  
+Output:   QREF(al-Nisāʾ,4,111)  
 Expected: al-Nisāʾ, Q4:111
 
 The Prophet PBUH is reported to have said...
