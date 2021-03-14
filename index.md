@@ -1,23 +1,36 @@
 
 #mode standard cpp
+
 /* ======================
         Quran Related
    ======================*/
-#mode standard default
 
 #define QREF #1, Q#2:#3
 
-#mode standard cpp
+#define QURAN \
+::: {custom-style="quran AR"}\
+#1\
+:::\
+\
+::: {custom-style="quran trans EN"}\
+«#2»\
+:::\
+\
+::: {custom-style="quran reference EN"}\
+#3\
+:::
+
+
+
 /* ======================
         Ḥadīth Related
    ======================*/
-#mode standard default
 
-#mode standard cpp
+
+
 /* ======================
         Honorifics
    ======================*/
-#mode standard default
 
 #define SWT ([سبحانه وتعالى]{lang=ar})
 #define PBUH ([صلى الله عليه وسلم]{lang=ar})
@@ -37,22 +50,25 @@
 
 #define pyTime #exec python python/_pyTime.py
 
-
-#mode standard cpp
 /* ==========================
         DOCUMENT METADATA
    ==========================*/
-#include metadata.yaml
 
-#mode standard default
+#include metadata.yaml
 
 # Introduction
 
-
+QURAN(
+يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ حَقَّ تُقَاتِهِۦ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسۡلِمُونَ ١٠٢,
+O you who believe! Fear Allāh (by doing all that He has ordered and by
+abstaining from all that He has forbidden) as He should be feared. [Obey Him\, be
+thankful to Him\, and remember Him always]\, and die not except in a state of
+Islam [as Muslims (with complete submission to Allāh)].,
+QREF(Āl ʿImrān,3,102))
 
 ## Tests
 
-Output (\pyTime): pyTime
+Hijri Date Output: pyTime
 
 Output:   The Prophet PBUH  
 Expected: The Prophet ([صلى الله عليه وسلم]{lang=ar})
