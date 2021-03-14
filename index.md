@@ -1,9 +1,7 @@
-
-#mode standard cpp
-
 /* ======================
         Quran Related
    ======================*/
+#mode standard default
 
 #define QREF #1, Q#2:#3
 
@@ -18,9 +16,7 @@
 \
 ::: {custom-style="quran reference EN"}\
 #3\
-:::
-
-
+:::\
 
 /* ======================
         Ḥadīth Related
@@ -31,7 +27,8 @@
 /* ======================
         Honorifics
    ======================*/
-
+#mode standard cpp
+   
 #define SWT ([سبحانه وتعالى]{lang=ar})
 #define PBUH ([صلى الله عليه وسلم]{lang=ar})
 #define P_HIM ([رضي الله عنه]{lang=ar})
@@ -58,12 +55,12 @@
 
 # Introduction
 
-QURAN(
-يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ حَقَّ تُقَاتِهِۦ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسۡلِمُونَ ١٠٢,
-O you who believe! Fear Allāh (by doing all that He has ordered and by
-abstaining from all that He has forbidden) as He should be feared. [Obey Him\, be
-thankful to Him\, and remember Him always]\, and die not except in a state of
-Islam [as Muslims (with complete submission to Allāh)].,
+QURAN(\
+يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ حَقَّ تُقَاتِهِۦ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسۡلِمُونَ ١٠٢,\
+"O you who believe! Fear Allāh (by doing all that He has ordered and by
+abstaining from all that He has forbidden) as He should be feared. [Obey Him, be
+thankful to Him, and remember Him always], and die not except in a state of
+Islam [as Muslims (with complete submission to Allāh)].",\
 QREF(Āl ʿImrān,3,102))
 
 ## Tests
