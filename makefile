@@ -9,7 +9,7 @@ html:
 	$(GPP) $(SOURCE) -x | pandoc -t html5 -s -o $(OUT_PREFIX).html
 
 docx:
-	$(GPP) $(SOURCE) -x | pandoc -t docx -o $(OUT_PREFIX).docx
+	$(GPP) $(SOURCE) -x | pandoc -t docx -o $(OUT_PREFIX).docx --reference-doc=template.docx
 
 source:
 	$(GPP) $(SOURCE) -x > $(OUT_PREFIX).md
