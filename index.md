@@ -13,7 +13,7 @@
 :::
 
 ::: {custom-style="Quran Translation"}
-«\translation »
+«\translation@»
 :::
 
 ::: {custom-style="Quran Reference"}
@@ -53,6 +53,9 @@
 /* ==========================
         DOCUMENT METADATA
    ==========================*/
+#mode standard cpp
+#mode user "\\" "" "{" "}{" "}" "{" "}" "#" ""
+#mode comment "%\n" ""
 
 #include metadata.yaml
 
@@ -63,27 +66,27 @@
 
 Hijri Date Output: pyTime
 
-Output:   The Prophet PBUH  
+Output:   The Prophet \PBUH  
 Expected: The Prophet ([صلى الله عليه وسلم]{lang=ar})
 
-Output:   Abū Bakr P_HIM  
+Output:   Abū Bakr \P_HIM  
 Expected: Abū Bakr (May Allāh be pleased with him)
 
-Output:   Khadījah P_HER  
+Output:   Khadījah \P_HER  
 Expected: Khadījah (May Allāh be pleased with her)
 
-#mode standard tex
 Output:   \qref{al-Nisāʾ}{4}{111}  
 Expected: al-Nisāʾ, Q4:111
 
-\quran{
-وَكَمۡ أَهۡلَكۡنَا مِن قَرۡيَةِۢ بَطِرَتۡ مَعِيشَتَهَاۖ فَتِلۡكَ مَسَٰكِنُهُمۡ لَمۡ تُسۡكَن مِّنۢ بَعۡدِهِمۡ إِلَّا قَلِيلٗاۖ وَكُنَّا نَحۡنُ ٱلۡوَٰرِثِينَ ٥٨
-}{And how many a town (population) have We destroyed, which was thankless for its
+\quran{%
+وَكَمۡ أَهۡلَكۡنَا مِن قَرۡيَةِۢ بَطِرَتۡ مَعِيشَتَهَاۖ فَتِلۡكَ مَسَٰكِنُهُمۡ لَمۡ تُسۡكَن مِّنۢ بَعۡدِهِمۡ إِلَّا قَلِيلٗاۖ وَكُنَّا نَحۡنُ ٱلۡوَٰرِثِينَ ٥٨}{%
+And how many a town (population) have We destroyed, which was thankless for its
 means of livelihood (disobeyed Allah, and His Messengers, by doing evil deeds
 and crimes)! And those are their dwellings, which have not been inhabited after
-them except a little. And verily, We have been the inheritor.}{\qref{al-Qaṣaṣ}{28}{58}}
+them except a little. And verily, We have been the inheritor.}{%
+\qref{al-Qaṣaṣ}{28}{58}}
 
-\mode{standard}{cpp}
+#mode standard cpp
 
 The Prophet PBUH is reported to have said...
 
