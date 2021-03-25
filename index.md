@@ -1,25 +1,27 @@
-mode standard cpp
+
+#mode standard cpp
 /* ======================
         Quran Related
    ======================*/
-#mode standard default
+#mode standard tex
 
-#define QREF #1, Q#2:#3
+\define{\qref{surahName}{surahNumber}{ayahNumber}}{\surahName, Q\surahNumber:\ayahNumber}
 
-#define QURAN \
-::: {custom-style="Quran Arabic" dir="rtl"}\
-#1\
-:::\
-\
-::: {custom-style="Quran Translation"}\
-«#2»\
-:::\
-\
-::: {custom-style="Quran Reference"}\
-#3\
+\define{\quran{arabic}{translation}{reference}}{
+::: {custom-style="Quran Arabic" dir="rtl"}
+\arabic
 :::
 
-#mode standard cpp
+::: {custom-style="Quran Translation"}
+\translation
+:::
+
+::: {custom-style="Quran Reference"}
+\reference
+:::
+}
+
+\mode{standard}{cpp}
 /* ======================
         Ḥadīth Related
    ======================*/
@@ -29,7 +31,6 @@ mode standard cpp
 /* ======================
         Honorifics
    ======================*/
-#mode standard default
 
 #define SWT ([سبحانه وتعالى]{lang=ar})
 #define PBUH ([صلى الله عليه وسلم]{lang=ar})
@@ -47,27 +48,16 @@ mode standard cpp
 #define BP_THM ([رضي الله عنهم]{custom-style="kBody Honorifics"})
 #define M_HIM ([رحمه الله تعالى]{custom-style="kBody Honorifics"})
 
-#define pyTimeHijri #exec python python/_pyTimeHijri.py
+#define pyTime #exec python python/_pyTime.py
 
-#mode standard cpp
 /* ==========================
         DOCUMENT METADATA
    ==========================*/
-#mode standard default
-#mode user "" "" "(" "|" ")" "(" ")" "#" "\\"
-#mode preservelf off
 
 #include metadata.yaml
 
 # Introduction
 
-QURAN(
-يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ حَقَّ تُقَاتِهِۦ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسۡلِمُونَ ١٠٢|
-"O you who believe! Fear Allāh (by doing all that He has ordered and by
-abstaining from all that He has forbidden) as He should be feared. [Obey Him, be
-thankful to Him, and remember Him always], and die not except in a state of
-Islam [as Muslims (with complete submission to Allāh)]."|
-QREF(Āl ʿImrān,3,102))
 
 ## Tests
 
@@ -76,14 +66,25 @@ Hijri Date Output: pyTime
 Output:   The Prophet PBUH  
 Expected: The Prophet ([صلى الله عليه وسلم]{lang=ar})
 
-Output:   Abū Bakr p(him)  
+Output:   Abū Bakr P_HIM  
 Expected: Abū Bakr (May Allāh be pleased with him)
 
-Output:   Khadījah p(her)  
+Output:   Khadījah P_HER  
 Expected: Khadījah (May Allāh be pleased with her)
 
-Output:   QREF(al-Nisāʾ,4,111)  
+#mode standard tex
+Output:   \qref{al-Nisāʾ}{4}{111}  
 Expected: al-Nisāʾ, Q4:111
+
+\quran{
+وَكَمۡ أَهۡلَكۡنَا مِن قَرۡيَةِۢ بَطِرَتۡ مَعِيشَتَهَاۖ فَتِلۡكَ مَسَٰكِنُهُمۡ لَمۡ تُسۡكَن مِّنۢ بَعۡدِهِمۡ إِلَّا قَلِيلٗاۖ وَكُنَّا نَحۡنُ ٱلۡوَٰرِثِينَ ٥٨
+}{And how many a town (population) have We destroyed, which was thankless for its
+means of livelihood (disobeyed Allah, and His Messengers, by doing evil deeds
+and crimes)! And those are their dwellings, which have not been inhabited after
+them except a little. And verily, We have been the inheritor.}
+{\qref{al-Qaṣaṣ}{28}{58}}
+
+\mode{standard}{cpp}
 
 The Prophet PBUH is reported to have said...
 
