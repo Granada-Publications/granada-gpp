@@ -55,6 +55,8 @@
    ==========================*/
 #mode standard cpp
 #mode user "\\" "" "{" "}{" "}" "{" "}" "#" ""
+#mode string iii "\"" "\"" "\\"
+#mode string iii "'" "'" "\\"
 #mode comment "%\n" ""
 
 #include metadata.yaml
