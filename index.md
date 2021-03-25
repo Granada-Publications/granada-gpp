@@ -81,8 +81,7 @@ Expected: al-Nisāʾ, Q4:111
 }{And how many a town (population) have We destroyed, which was thankless for its
 means of livelihood (disobeyed Allah, and His Messengers, by doing evil deeds
 and crimes)! And those are their dwellings, which have not been inhabited after
-them except a little. And verily, We have been the inheritor.}
-{\qref{al-Qaṣaṣ}{28}{58}}
+them except a little. And verily, We have been the inheritor.}{\qref{al-Qaṣaṣ}{28}{58}}
 
 \mode{standard}{cpp}
 
