@@ -1,3 +1,4 @@
+mode standard cpp
 /* ======================
         Quran Related
    ======================*/
@@ -6,18 +7,19 @@
 #define QREF #1, Q#2:#3
 
 #define QURAN \
-::: {custom-style="quran AR"}\
+::: {custom-style="Quran Arabic" dir="rtl"}\
 #1\
 :::\
 \
-::: {custom-style="quran trans EN"}\
+::: {custom-style="Quran Translation"}\
 «#2»\
 :::\
 \
-::: {custom-style="quran reference EN"}\
+::: {custom-style="Quran Reference"}\
 #3\
-:::\
+:::
 
+#mode standard cpp
 /* ======================
         Ḥadīth Related
    ======================*/
@@ -27,8 +29,8 @@
 /* ======================
         Honorifics
    ======================*/
-#mode standard cpp
-   
+#mode standard default
+
 #define SWT ([سبحانه وتعالى]{lang=ar})
 #define PBUH ([صلى الله عليه وسلم]{lang=ar})
 #define P_HIM ([رضي الله عنه]{lang=ar})
@@ -45,11 +47,13 @@
 #define BP_THM ([رضي الله عنهم]{custom-style="kBody Honorifics"})
 #define M_HIM ([رحمه الله تعالى]{custom-style="kBody Honorifics"})
 
-#define pyTime #exec python python/_pyTime.py
+#define pyTimeHijri #exec python python/_pyTimeHijri.py
 
+#mode standard cpp
 /* ==========================
         DOCUMENT METADATA
    ==========================*/
+#mode standard default
 
 #include metadata.yaml
 
