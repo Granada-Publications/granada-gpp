@@ -13,7 +13,7 @@
 :::
 
 ::: {custom-style="Quran Translation"}
-\translation
+«\translation »
 :::
 
 ::: {custom-style="Quran Reference"}
